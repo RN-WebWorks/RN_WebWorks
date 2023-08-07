@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 82, 83);
+    font-family: 'poppins';
+}
+.calculator {
+    height: 350px;
+    width: 400px;
+    padding: 50px;
+    background-color: #ff0000;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+}
+.calculator input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.btn-gruop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+input[type='text'],
+button,
+#result{
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+button{
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+}
+#result{
+    width: 100%;
+    background-color: #fff;
+}
+
+.attribute{
+    position: absolute;
+    bottom: 10px;
+}
+
+@media (max-width:768px) {
+    .calculator{
+        width: 300px;
+    }
+}
+    </style>
+    
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="operand1" placeholder="Enter first Number">
+        <input type="text" id="operand2" placeholder="Enter second Number">
+        <div class="btn-gruop">
+            <button onclick="add()">+</button>
+            <button onclick="subtract()">-</button>
+            <button onclick="multiply()">*</button>
+            <button onclick="divide()">/</button>
+        </div>
+        <p id="result">
+            Result
+        </p>
+    </div>
+
+    <div class="attribute">
+        Created by Rishi Nandakumar
+    </div>
+
+    <!-- custom js file   -->
+    <script>
+        // global variables 
+const operand1 = parseFloat(document.getElementById("operand1").value);
+const operand2 = parseFloat(document.getElementById("operand2").value);
+
+function add() {
+    const result = operand1 + operand2;
+    document.getElementById("result").innerText = "Result: " + result;
+}
+
+function subtract() {
+    const result = operand1 - operand2;
+    document.getElementById("result").innerText = "Result: " + result;
+}
+
+function multiply() {
+    const result = operand1 * operand2;
+    document.getElementById("result").innerText = "Result: " + result;
+}
+
+function divide() {
+    const result = operand1 / operand2;
+    document.getElementById("result").innerText = "Result: " + result;
+}
+    </script>
+</body>
+</html>
